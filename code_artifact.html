@@ -1,0 +1,702 @@
+<!doctype html>
+<html lang="ar" dir="rtl" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>كافيه ومحمصة الروقان | El Rawaqan Cafe</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts: Cairo -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ["Cairo", "sans-serif"],
+            },
+            colors: {
+              amber: {
+                400: "#fbbf24",
+                500: "#f59e0b",
+                600: "#d97706",
+              },
+              dark: {
+                900: "#0f1115",
+                800: "#181b20",
+                700: "#22272e",
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Cairo", sans-serif;
+        background-color: #0f1115;
+        color: #f3f4f6;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .glass-header {
+        background: rgba(15, 17, 21, 0.85);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+      .glass-card {
+        background: rgba(24, 27, 32, 0.7);
+        backdrop-filter: blur(8px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+      }
+      .gradient-gold-text {
+        background: linear-gradient(135deg, #fbbf24 0%, #d97706 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .gold-border-glow {
+        box-shadow: 0 0 15px rgba(245, 158, 11, 0.2);
+      }
+      /* Custom scrollbars */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0f1115;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #2b303b;
+        border-radius: 9999px;
+      }
+    </style>
+  </head>
+  <body class="pb-28">
+    <!-- Pitch Bar for Client Demo -->
+    <div
+      id="pitch-banner"
+      class="bg-gradient-to-r from-amber-600 to-amber-500 text-dark-900 font-bold text-xs md:text-sm py-2 px-4 text-center flex items-center justify-between shadow-lg sticky top-0 z-50"
+    >
+      <div class="flex items-center gap-2 mx-auto">
+        <span
+          class="bg-dark-900 text-amber-400 px-2 py-0.5 rounded-full text-[11px]"
+          >معاينة لعملاء Google Maps</span
+        >
+        <span>هل تريد موقعاً تفاعلياً كـ هذا لمكانيتك في أقل من 48 ساعة؟</span>
+      </div>
+      <button
+        onclick="
+          document.getElementById('pitch-modal').classList.remove('hidden')
+        "
+        class="bg-dark-900 text-amber-400 hover:bg-black text-xs px-3 py-1 rounded-lg transition-all font-semibold shrink-0"
+      >
+        تواصل معنا لتنفيذ موقعك
+      </button>
+    </div>
+
+    <!-- Header / Navbar -->
+    <header
+      class="glass-header sticky top-[33px] z-40 border-b border-gray-800"
+    >
+      <div
+        class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between"
+      >
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 rounded-xl bg-gradient-to-br from-amber-400 to-amber-600 flex items-center justify-center text-dark-900 font-extrabold text-xl shadow-lg shadow-amber-500/20"
+          >
+            <i class="fa-solid fa-mug-hot"></i>
+          </div>
+          <div>
+            <h1 class="font-bold text-base md:text-lg text-white leading-tight">
+              كافيه الروقان
+            </h1>
+            <p class="text-xs text-gray-400">El Rawaqan Coffee & Lounge</p>
+          </div>
+        </div>
+
+        <a
+          href="tel:+201000000000"
+          class="flex items-center gap-2 text-xs bg-dark-800 border border-gray-700 hover:border-amber-500 text-gray-200 px-3 py-2 rounded-xl transition-all"
+        >
+          <i class="fa-solid fa-phone text-amber-400"></i>
+          <span class="hidden sm:inline">اتصل بنا</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Hero Section -->
+    <section class="relative overflow-hidden pt-6 pb-8 px-4 max-w-4xl mx-auto">
+      <!-- Background Blur Decorative Circles -->
+      <div
+        class="absolute -top-10 -right-10 w-48 h-48 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"
+      ></div>
+      <div
+        class="absolute top-20 -left-10 w-48 h-48 bg-amber-600/10 rounded-full blur-3xl pointer-events-none"
+      ></div>
+
+      <div
+        class="glass-card rounded-3xl p-5 md:p-8 relative overflow-hidden border border-amber-500/20"
+      >
+        <!-- Hero Image Banner -->
+        <div class="relative h-44 sm:h-56 rounded-2xl overflow-hidden mb-5">
+          <img
+            src="https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?auto=format&fit=crop&w=1000&q=80"
+            alt="Cafe Interior"
+            class="w-full h-full object-cover"
+          />
+          <div
+            class="absolute inset-0 bg-gradient-to-t from-dark-900 via-dark-900/40 to-transparent"
+          ></div>
+
+          <!-- Google Maps Badge Overlay -->
+          <div
+            class="absolute top-3 right-3 bg-dark-900/90 backdrop-blur-md border border-gray-700 px-3 py-1.5 rounded-full flex items-center gap-2 text-xs"
+          >
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/3/39/Google_Maps_icon_%282020%29.svg"
+              class="w-4 h-4"
+              alt="Google Maps"
+            />
+            <span class="text-amber-400 font-bold">4.9</span>
+            <div class="flex text-amber-400 text-[10px]">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <span class="text-gray-400 text-[10px]">(+340 تقييم)</span>
+          </div>
+
+          <!-- Status Tag -->
+          <div
+            class="absolute bottom-3 right-3 bg-emerald-500/20 backdrop-blur-md border border-emerald-500/50 text-emerald-400 px-3 py-1 rounded-full text-xs font-semibold flex items-center gap-1.5"
+          >
+            <span
+              class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"
+            ></span>
+            مفتوح الآن لاستقبالكم
+          </div>
+        </div>
+
+        <!-- Content -->
+        <h2 class="text-2xl sm:text-3xl font-black mb-2 leading-tight">
+          استمتع بأفضل لحظات القهوة والروقان ☕
+        </h2>
+        <p class="text-gray-300 text-sm leading-relaxed mb-6">
+          مذاق القهوة المختصة الأصيلة، ومشروبات فريش تحضر يومياً، مع تشكيلة
+          حلويات غربية وشرقية متميزة في أجواء هادئة ومريحة.
+        </p>
+
+        <!-- CTA Action Buttons -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <a
+            href="#menu"
+            class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-dark-900 font-extrabold py-3.5 px-4 rounded-xl shadow-lg shadow-amber-500/25 flex items-center justify-center gap-2 transition-all active:scale-95 text-sm"
+          >
+            <i class="fa-solid fa-utensils text-base"></i>
+            <span>استعراض المنيو والطلب السريع</span>
+          </a>
+          <a
+            href="https://maps.google.com"
+            target="_blank"
+            class="w-full bg-dark-800 hover:bg-dark-700 border border-gray-700 text-white font-bold py-3.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all active:scale-95 text-sm"
+          >
+            <i class="fa-solid fa-location-dot text-amber-400 text-base"></i>
+            <span>الاتجاهات على Google Maps</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Features Bar -->
+    <section class="max-w-4xl mx-auto px-4 mb-8">
+      <div class="grid grid-cols-3 gap-2 text-center">
+        <div class="glass-card p-3 rounded-2xl">
+          <i class="fa-solid fa-wifi text-amber-400 text-lg mb-1"></i>
+          <h4 class="text-xs font-bold">واي فاي سريع</h4>
+          <p class="text-[10px] text-gray-400">مناسب للعمل</p>
+        </div>
+        <div class="glass-card p-3 rounded-2xl">
+          <i class="fa-solid fa-motorcycle text-amber-400 text-lg mb-1"></i>
+          <h4 class="text-xs font-bold">توصيل سريع</h4>
+          <p class="text-[10px] text-gray-400">خلال دقائق</p>
+        </div>
+        <div class="glass-card p-3 rounded-2xl">
+          <i class="fa-solid fa-square-parking text-amber-400 text-lg mb-1"></i>
+          <h4 class="text-xs font-bold">جراج مجاني</h4>
+          <p class="text-[10px] text-gray-400">مواقف سهلة</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Menu Section -->
+    <section id="menu" class="max-w-4xl mx-auto px-4 mb-10">
+      <div class="flex items-center justify-between mb-4">
+        <div>
+          <h3 class="text-xl font-black text-white flex items-center gap-2">
+            <span class="w-2 h-6 bg-amber-500 rounded-full inline-block"></span>
+            قائمة الطعام والشراب (المنيو)
+          </h3>
+          <p class="text-xs text-gray-400 mt-0.5">
+            اختر الأصناف وأضفها لطلبك التلقائي عبر واتساب
+          </p>
+        </div>
+      </div>
+
+      <!-- Category Tabs Filter -->
+      <div
+        class="flex items-center gap-2 overflow-x-auto pb-3 no-scrollbar mb-4 border-b border-gray-800"
+      >
+        <button
+          onclick="filterMenu('all')"
+          class="category-btn active bg-amber-500 text-dark-900 font-bold px-4 py-2 rounded-xl text-xs whitespace-nowrap transition-all"
+        >
+          الكل ✨
+        </button>
+        <button
+          onclick="filterMenu('hot')"
+          class="category-btn bg-dark-800 hover:bg-dark-700 text-gray-300 font-bold px-4 py-2 rounded-xl text-xs whitespace-nowrap transition-all border border-gray-800"
+        >
+          مشروبات ساخنة ☕
+        </button>
+        <button
+          onclick="filterMenu('cold')"
+          class="category-btn bg-dark-800 hover:bg-dark-700 text-gray-300 font-bold px-4 py-2 rounded-xl text-xs whitespace-nowrap transition-all border border-gray-800"
+        >
+          عصائر وفريش 🍹
+        </button>
+        <button
+          onclick="filterMenu('dessert')"
+          class="category-btn bg-dark-800 hover:bg-dark-700 text-gray-300 font-bold px-4 py-2 rounded-xl text-xs whitespace-nowrap transition-all border border-gray-800"
+        >
+          حلويات وافل 🍰
+        </button>
+      </div>
+
+      <!-- Menu Cards Grid -->
+      <div id="menu-container" class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Items injected by JS -->
+      </div>
+    </section>
+
+    <!-- Google Reviews Section -->
+    <section class="max-w-4xl mx-auto px-4 mb-10">
+      <div class="glass-card rounded-3xl p-5 border border-gray-800">
+        <div class="flex items-center justify-between mb-4">
+          <div>
+            <h3 class="text-lg font-bold text-white flex items-center gap-2">
+              <i class="fa-brands fa-google text-amber-400"></i>
+              آراء زوارنا على Google Maps
+            </h3>
+            <p class="text-xs text-gray-400">
+              تقييم حقيقي من عملائنا على الخريطة
+            </p>
+          </div>
+          <span
+            class="text-xs bg-amber-500/10 text-amber-400 border border-amber-500/30 px-2.5 py-1 rounded-full font-bold"
+            >⭐ 4.9 / 5</span
+          >
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <div class="bg-dark-900/80 p-4 rounded-2xl border border-gray-800">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs"
+                >
+                  أ
+                </div>
+                <div>
+                  <h5 class="text-xs font-bold text-gray-200">أحمد محمود</h5>
+                  <p class="text-[10px] text-gray-400">قبل أسبوع</p>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              "مكان ممتاز وهادي، القهوة المختصة عندهم مضبوطة بالظبط، والخدمة
+              سريعة جداً. صرت باجي هنا ديماً للشغل."
+            </p>
+          </div>
+
+          <div class="bg-dark-900/80 p-4 rounded-2xl border border-gray-800">
+            <div class="flex items-center justify-between mb-2">
+              <div class="flex items-center gap-2">
+                <div
+                  class="w-7 h-7 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center font-bold text-xs"
+                >
+                  م
+                </div>
+                <div>
+                  <h5 class="text-xs font-bold text-gray-200">مريم علي</h5>
+                  <p class="text-[10px] text-gray-400">قبل 3 أيام</p>
+                </div>
+              </div>
+              <div class="text-amber-400 text-xs">★★★★★</div>
+            </div>
+            <p class="text-xs text-gray-300 leading-relaxed">
+              "الوافل مع النوتيلا خطير! واستجابة الواتساب لما بنطلب ديلفري كانت
+              في أقل من دقيقة. برافو بجد 👍"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location & Working Hours Section -->
+    <section class="max-w-4xl mx-auto px-4 mb-8">
+      <div class="glass-card rounded-3xl p-5 border border-gray-800">
+        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+          <i class="fa-solid fa-clock text-amber-400"></i>
+          المواعيد والموقع الجغرافي
+        </h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div class="space-y-3">
+            <div
+              class="flex items-start gap-3 bg-dark-900/60 p-3 rounded-xl border border-gray-800"
+            >
+              <i
+                class="fa-solid fa-location-dot text-amber-400 text-base mt-1"
+              ></i>
+              <div>
+                <h5 class="text-xs font-bold text-gray-200">العنوان:</h5>
+                <p class="text-xs text-gray-400">
+                  شارع الجلاء الرئيسي، بجوار بنك مصر - الإسكندرية / القاهرة
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="flex items-start gap-3 bg-dark-900/60 p-3 rounded-xl border border-gray-800"
+            >
+              <i
+                class="fa-solid fa-calendar-days text-amber-400 text-base mt-1"
+              ></i>
+              <div>
+                <h5 class="text-xs font-bold text-gray-200">ساعات العمل:</h5>
+                <p class="text-xs text-gray-400">
+                  يومياً من الساعة 9:00 صباحاً وحتى 1:00 منتصف الليل
+                </p>
+              </div>
+            </div>
+
+            <a
+              href="https://maps.google.com"
+              target="_blank"
+              class="w-full bg-dark-800 hover:bg-dark-700 text-amber-400 border border-amber-500/30 font-bold py-2.5 px-4 rounded-xl flex items-center justify-center gap-2 transition-all text-xs"
+            >
+              <i class="fa-solid fa-diamond-turn-right"></i>
+              <span>افتح المكان مباشرة على تطبيق الخرائط</span>
+            </a>
+          </div>
+
+          <!-- Interactive Map Box Placeholder -->
+          <div
+            class="relative h-44 rounded-2xl overflow-hidden border border-gray-700"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?auto=format&fit=crop&w=600&q=80"
+              class="w-full h-full object-cover opacity-60"
+              alt="Map Location"
+            />
+            <div
+              class="absolute inset-0 bg-dark-900/40 flex flex-col items-center justify-center p-4 text-center"
+            >
+              <div
+                class="w-10 h-10 rounded-full bg-amber-500 text-dark-900 flex items-center justify-center text-lg font-bold shadow-lg shadow-amber-500/50 mb-2 animate-bounce"
+              >
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <span
+                class="text-xs font-extrabold text-white bg-dark-900/90 px-3 py-1 rounded-full border border-gray-700"
+                >كافيه الروقان على جوجل مابس</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Floating WhatsApp Cart Bar -->
+    <div
+      id="cart-bar"
+      class="fixed bottom-4 left-4 right-4 max-w-xl mx-auto z-40 hidden transition-all duration-300 transform translate-y-0"
+    >
+      <div
+        class="bg-gradient-to-r from-emerald-600 to-emerald-500 text-white rounded-2xl p-3.5 shadow-2xl flex items-center justify-between border border-emerald-400/30"
+      >
+        <div class="flex items-center gap-3">
+          <div class="relative">
+            <div
+              class="w-10 h-10 rounded-xl bg-dark-900/30 flex items-center justify-center text-lg font-bold"
+            >
+              <i class="fa-solid fa-cart-shopping text-emerald-200"></i>
+            </div>
+            <span
+              id="cart-count"
+              class="absolute -top-1.5 -right-1.5 bg-amber-400 text-dark-900 font-extrabold text-[10px] w-5 h-5 rounded-full flex items-center justify-center border-2 border-emerald-600"
+              >0</span
+            >
+          </div>
+          <div>
+            <h4 class="text-xs font-extrabold">الطلب الحالي جاهز</h4>
+            <p id="cart-total" class="text-xs text-emerald-100 font-semibold">
+              إجمالي الأصناف: 0 ج.م
+            </p>
+          </div>
+        </div>
+
+        <button
+          onclick="sendOrderToWhatsApp()"
+          class="bg-white text-emerald-800 hover:bg-emerald-50 font-black px-4 py-2.5 rounded-xl text-xs flex items-center gap-2 shadow-lg transition-all active:scale-95"
+        >
+          <i class="fa-brands fa-whatsapp text-lg text-emerald-600"></i>
+          <span>إرسال الطلب عبر واتساب</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Pitch Modal for Selling the Site -->
+    <div
+      id="pitch-modal"
+      class="fixed inset-0 bg-dark-900/90 backdrop-blur-md z-50 flex items-center justify-center p-4 hidden"
+    >
+      <div
+        class="glass-card max-w-md w-full rounded-3xl p-6 border border-amber-500/40 relative"
+      >
+        <button
+          onclick="
+            document.getElementById('pitch-modal').classList.add('hidden')
+          "
+          class="absolute top-4 left-4 text-gray-400 hover:text-white text-lg"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <div
+          class="w-12 h-12 rounded-2xl bg-amber-500/20 text-amber-400 flex items-center justify-center text-2xl font-bold mb-4"
+        >
+          <i class="fa-solid fa-rocket"></i>
+        </div>
+
+        <h3 class="text-xl font-black text-white mb-2">
+          اصنع موقعاً لعملك التجاري الآن!
+        </h3>
+        <p class="text-xs text-gray-300 leading-relaxed mb-4">
+          هذه المعاينة مصممة خصيصاً لمساعدة الأنشطة التجارية والمحلات المتميزة
+          على Google Maps للزيادة من المبيعات وتسهيل طلبات الواتساب وتوثيق
+          مكانتهم الرقمية.
+        </p>
+
+        <ul class="text-xs space-y-2 mb-6 text-gray-300">
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-check text-emerald-400"></i> تصميم متوافق 100%
+            مع شاشات الهواتف.
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-check text-emerald-400"></i> ربط مباشر بأرقام
+            الواتساب وجوجل مابس.
+          </li>
+          <li class="flex items-center gap-2">
+            <i class="fa-solid fa-check text-emerald-400"></i> سرعة تحميل فائقة
+            وتجهيز خلال 48 ساعة فقط.
+          </li>
+        </ul>
+
+        <div class="space-y-2">
+          <a
+            href="https://wa.me/201000000000?text=أهلاً%20يوسف،%20رأيت%20معاينة%20الموقع%20وأريد%20تنفيذ%20موقع%20لمشروعي"
+            target="_blank"
+            class="w-full bg-gradient-to-r from-amber-500 to-amber-600 text-dark-900 font-extrabold py-3 px-4 rounded-xl flex items-center justify-center gap-2 text-xs shadow-lg"
+          >
+            <i class="fa-brands fa-whatsapp text-base"></i>
+            <span>تواصل معنا فوراً على الواتساب</span>
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- JavaScript logic -->
+    <script>
+      // Sample Menu Data
+      const menuItems = [
+        {
+          id: 1,
+          title: "إسبراسو دوبل (Espresso Double)",
+          category: "hot",
+          price: 45,
+          image:
+            "https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04?auto=format&fit=crop&w=400&q=80",
+          desc: "بن مختص 100% مستورد بنكهات قوية وغنية",
+        },
+        {
+          id: 2,
+          title: "كابتشينو روقان (Cappuccino)",
+          category: "hot",
+          price: 60,
+          image:
+            "https://images.unsplash.com/photo-1534778101976-62847782c213?auto=format&fit=crop&w=400&q=80",
+          desc: "إسبراسو غني مع رغوة الحليب الطازج ولمسة قرفة",
+        },
+        {
+          id: 3,
+          title: "موهيتو ريد بول فريش (RedBull Mojito)",
+          category: "cold",
+          price: 75,
+          image:
+            "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=400&q=80",
+          desc: "نعناع طازج، ليمون، ونكهات التوت مع الريدبول",
+        },
+        {
+          id: 4,
+          title: "آيس لاتي كراميل (Iced Caramel Latte)",
+          category: "cold",
+          price: 70,
+          image:
+            "https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=400&q=80",
+          desc: "قهوة باردة مع صوص الكراميل والغزل المفضل",
+        },
+        {
+          id: 5,
+          title: "وافل نوتيلا وفواكه (Nutella Waffle)",
+          category: "dessert",
+          price: 85,
+          image:
+            "https://images.unsplash.com/photo-1562376552-0d160a2f238d?auto=format&fit=crop&w=400&q=80",
+          desc: "وافل بلجيكي هش مقرمش مغطى بالنوتيلا والموز",
+        },
+        {
+          id: 6,
+          title: "تشيز كيك لوتس (Lotus Cheesecake)",
+          category: "dessert",
+          price: 80,
+          image:
+            "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?auto=format&fit=crop&w=400&q=80",
+          desc: "طبق التشيز كيك الغني بزبوت اللوتس المقرمشة",
+        },
+      ];
+
+      let cart = [];
+
+      // Render Menu Items
+      function renderMenu(items) {
+        const container = document.getElementById("menu-container");
+        container.innerHTML = items
+          .map(
+            (item) => `
+                <div class="glass-card rounded-2xl p-3 flex gap-3 items-center border border-gray-800 hover:border-amber-500/40 transition-all">
+                    <img src="${item.image}" alt="${item.title}" class="w-24 h-24 rounded-xl object-cover shrink-0">
+                    <div class="flex-1 min-w-0">
+                        <h4 class="text-xs font-bold text-white truncate">${item.title}</h4>
+                        <p class="text-[10px] text-gray-400 line-clamp-2 my-1">${item.desc}</p>
+                        <div class="flex items-center justify-between mt-2">
+                            <span class="text-xs font-black text-amber-400">${item.price} ج.م</span>
+                            <button onclick="addToCart(${item.id})" class="bg-amber-500 hover:bg-amber-600 text-dark-900 font-bold px-3 py-1.5 rounded-lg text-[11px] flex items-center gap-1 transition-all active:scale-90">
+                                <i class="fa-solid fa-plus text-[10px]"></i>
+                                <span>أضف للطلب</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `,
+          )
+          .join("");
+      }
+
+      // Filter Function
+      function filterMenu(category) {
+        // Update Active Tab UI
+        document.querySelectorAll(".category-btn").forEach((btn) => {
+          btn.classList.remove("active", "bg-amber-500", "text-dark-900");
+          btn.classList.add("bg-dark-800", "text-gray-300");
+        });
+
+        event.target.classList.add("active", "bg-amber-500", "text-dark-900");
+        event.target.classList.remove("bg-dark-800", "text-gray-300");
+
+        if (category === "all") {
+          renderMenu(menuItems);
+        } else {
+          const filtered = menuItems.filter(
+            (item) => item.category === category,
+          );
+          renderMenu(filtered);
+        }
+      }
+
+      // Cart Actions
+      function addToCart(itemId) {
+        const item = menuItems.find((i) => i.id === itemId);
+        const existing = cart.find((i) => i.id === itemId);
+
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cart.push({ ...item, qty: 1 });
+        }
+
+        updateCartUI();
+      }
+
+      function updateCartUI() {
+        const cartBar = document.getElementById("cart-bar");
+        const cartCount = document.getElementById("cart-count");
+        const cartTotal = document.getElementById("cart-total");
+
+        const totalItems = cart.reduce((sum, item) => sum + item.qty, 0);
+        const totalPrice = cart.reduce(
+          (sum, item) => sum + item.price * item.qty,
+          0,
+        );
+
+        if (totalItems > 0) {
+          cartBar.classList.remove("hidden");
+          cartCount.innerText = totalItems;
+          cartTotal.innerText = `إجمالي الأصناف: ${totalPrice} ج.م`;
+        } else {
+          cartBar.classList.add("hidden");
+        }
+      }
+
+      // Format WhatsApp Order Message
+      function sendOrderToWhatsApp() {
+        if (cart.length === 0) return;
+
+        let message = "أهلاً بكافيه الروقان ☕، أريد تقديم الطلب التالي:\n\n";
+        let totalPrice = 0;
+
+        cart.forEach((item, index) => {
+          const itemTotal = item.price * item.qty;
+          totalPrice += itemTotal;
+          message += `${index + 1}. ${item.title} (عدد: ${item.qty}) - ${itemTotal} ج.م\n`;
+        });
+
+        message += `\nإجمالي الحساب: ${totalPrice} ج.م`;
+        message += `\nالعنوان / التفاصيل: `;
+
+        // Encoded WhatsApp URL
+        const whatsappNumber = "201000000000"; // Replace with client's actual number
+        const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+        window.open(whatsappUrl, "_blank");
+      }
+
+      // Initial Load
+      document.addEventListener("DOMContentLoaded", () => {
+        renderMenu(menuItems);
+      });
+    </script>
+  </body>
+</html>
